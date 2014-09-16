@@ -14,6 +14,8 @@
 		Adam Roberts
 	</author>
 	
-	<gap:platform name="android"/>
-	<gap:splash src="splash.png"/>
+	<gap:platform 	name	="android"/>
+	<gap:splash 	src		="splash.png"/>
+	<preference 	name	="orientation" 	value="portrait"/>>
+	<preference 	name	="fullscreen"	value="true"/>
 </widget>
