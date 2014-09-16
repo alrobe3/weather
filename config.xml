@@ -1,0 +1,19 @@
+<xml version="1.0" encoding="UTF-8:/>
+	<widget xmlns	=	"http://www.w3.org/ns/widgets"
+		xmlns:gap	=	"http://phonegap.com/ns/q.0"
+		id			=	"com.adamlroberts.weather"
+		version		=	"0.0.5"
+		>
+	<name>Thermo Weather</name>
+	
+	<description>
+		For Fun
+	</description>
+	
+	<author href="http://adamlroberts.com/" email="adamlroberts@adamlroberts.com">
+		Adam Roberts
+	</author>
+	
+	<gap:platform name="android"/>
+	<gap:splash src="splash.png"/>
+</widget>
