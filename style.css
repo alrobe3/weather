@@ -1,0 +1,134 @@
+
+body, html, a, img, div {
+	border: none;
+	text-decoration: none;
+	/*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+	font-family: 'Arial Narrow';
+
+}
+ body {
+	background: #525252;
+}
+ 
+#wrapper{
+	display:none;
+	background: #f5f5f5;
+	border-radius: 6px;
+	border: 1px solid #f5f5f5;
+	box-shadow: 0px 5px 4px black;
+}
+#bgImage {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	z-index:-1000;
+	transparent: .8;
+	background: black;
+}
+#notifications {
+	position:relative;
+    display: ;
+	width: 100px;
+	background: ;
+	margin: 0 auto;
+	left: 125px;;
+	top: 25px;
+}
+#notificationDrpDwn {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 0 auto;
+	text-align: center;
+	background: #f5f5f5;
+	/*min-width: 250px;*/
+	left: 211px;
+	border: 1px solid gray;
+	border-radius: 0px 0px 6px 6px;
+	box-shadow: 0px 4px 2px gray;
+}
+#notificationDrpDwn ul li {
+	list-style: none;
+}
+
+
+#mainMenu {
+    display:none;
+}
+#timeTemp {
+    background:  ;
+    margin: 0 auto;
+    min-width: 250px;
+    max-width: 250px;
+    text-align: center;   
+    color : white;
+    border-radius: 8px;
+	height: 300px;
+}
+
+#time {
+	display:none;
+    border-radius: 80px;
+	border: 5px solid lightgray;
+    background: white;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;      
+	color: darkGray;
+	margin-bottom: 5px;
+}
+#temp {
+	display:none;
+    position: relative;
+    color: white;
+    font-size: 80px;
+    /*background: dodgerBlue;*/
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    margin: 0 auto;
+    top:-100px;
+}
+#cIcon {
+	position: relative;
+    top: -12px;
+    z-index: 100;
+}
+#cIcon2 {
+	display: none;
+}
+#fiveHrs{
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+}
+#fiveHrs table{
+	width: 100%;
+	text-align: center;
+	padding-bottom: 24px;
+}
+#hourly_forecast {
+	display: none;
+	text-align:center;
+	background: none repeat scroll 0 0 #f5f5f5;
+	border-radius: 6px;
+	display: none;
+	text-align: center;
+}
+#hourly_header {
+	background: none repeat scroll 0 0 lightGray;
+border-radius: 6px 6px 0px 0px;
+}
+#hourly_forecast table {
+	width: 100%;
+}
+#hourly_forecast table tbody tr td.hrly_col {
+	text-align:right;
+	vertical-align: middle;
+}
+#hourly_forecast div{
+	width: ;
+	line-height: 40px;
+}
