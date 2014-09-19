@@ -1,3 +1,4 @@
+var currentTime;
 $(document).ready(function () {
 	
 	$('#wrapper').fadeIn('slow');
@@ -49,7 +50,7 @@ function getTemp(i) {
 		success : function (parsed_json) {
 			var location = parsed_json['location']['city'];
 			var temp_f = Math.ceil(parsed_json['current_observation']['temp_f']);
-			
+			console.log("last updated at " + currentTime );
 			var icon_url = parsed_json['current_observation']['icon_url'];
 			
 			icon_url = icon_url.split('/'); //url = ["serverName","app",...,"bb65efd50ade4b3591dcf7f4c693042b"]
@@ -59,7 +60,29 @@ function getTemp(i) {
 			
 			$('#temp').text(temp_f);
 			$('#cIcon img').attr('src', icon_url);
-
+			var temp_bg; 
+			var temp_brdr;
+			if (temp_f > 100 ) {
+				temp_bg = "#FF3D00";
+				temp_brder = "#FF3D11 ";
+			}if (temp_f > 89 && temp_f < 100 ) {
+				temp_bg = "#FF5B00";
+				temp_brder = "3FF5B11";
+			}if (temp_f > 79 && temp_f < 90 ) {
+				temp_bg = "#FF7500";
+				temp_brder = "#FF7511 ";
+			}if (temp_f > 69 && temp_f < 80 ) {
+				temp_bg = "#FF8900 "; 
+				temp_brder = "#632200";
+			}if (temp_f > 59 && temp_f < 70 ) {
+				temp_bg = "#EDC393";
+				temp_brder = "#dc8b2e";
+			}
+			temp_brder = temp_brder + " 25px solid";
+			$("#temp").css({
+					'background' : temp_bg,
+					'border' : temp_brder
+				});/*
 			if (temp_f > 80) {
 				$("#temp").css({
 					'background' : '#FF4D4D',
@@ -77,7 +100,7 @@ function getTemp(i) {
 					'background' : 'C2E0FF',
 					'border' : '25px solid #0056ae'
 				});
-			}
+			}*/
 			$('#cIcon' ).fadeIn('3000');
 			$('#cIcon2' ).fadeIn('3000');
 		}
@@ -91,11 +114,11 @@ function getTemp(i) {
 //function hourly_weather(){
 
 $.ajax({
-	url : "http://api.wunderground.com/api/fd103410b180a13b/hourly/q/CA/Greenville.json",
+	url : "http://api.wunderground.com/api/fd103410b180a13b/hourly/q/SC/Greenville.json",
 	dataType : "jsonp",
 	success : function (parsed_json) {
 		var test = parsed_json;
-		console.log(test)
+		
 		  var names = parsed_json;
           $('#hrly').html(test);
 		//var forecast = parsed_json['hourly_forecast'][1]['temp']['english'];
@@ -137,8 +160,8 @@ $.ajax({
 	dataType : "jsonp",
 	success : function (parsed_json2) {
 		//console.log(parsed_json[);
-		var keys = Object.keys(parsed_json2['forecast']);
-		console.log(keys);
+		//var keys = Object.keys(parsed_json2['forecast']);
+		//console.log(keys);
 		//console.log(parsed_json['forecast']['txt_forecast']['forecastday']['period'][1]['period'] );
 		
 	}
@@ -210,7 +233,7 @@ function clockTime() {
 	var sec = twoSpot(sec);
 	//ensure each section of time is 2 characters
 
-	var currentTime = hr + ":" + min + ":" + sec;
+	currentTime = hr + ":" + min + ":" + sec;
 	$('#time').html(currentTime);
 }
 
